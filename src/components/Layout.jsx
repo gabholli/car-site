@@ -5,7 +5,7 @@ import Footer from "./Footer"
 
 export default function Layout() {
     return (
-        <div className="grid grid-rows-[auto_1fr_auto] grid-cols-1 w-full h-svh">
+        <div className="grid grid-rows-[auto_1fr_auto] grid-cols-1 w-full min-h-svh">
             <Header />
             <Outlet />
             <Footer />

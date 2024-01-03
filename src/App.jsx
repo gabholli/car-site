@@ -1,10 +1,8 @@
 import './index.css'
 import { Route, Routes } from "react-router-dom"
 import Layout from './components/Layout'
-import Dashboard from './pages/CarInfo/Dashboard'
-import Models from './pages/CarInfo/Models'
+import Companies from './pages/CarInfo/Companies'
 import Home from './pages/Home'
-import DashboardLayout from './components/DashboardLayout'
 
 function App() {
 
@@ -15,10 +13,7 @@ function App() {
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
 
-          <Route path="cars" element={<DashboardLayout />} >
-            <Route index element={<Dashboard />} />
-            <Route path="models" element={<Models />} />
-          </Route>
+          <Route path="companies" element={<Companies />} />
 
         </Route>
       </Routes>
