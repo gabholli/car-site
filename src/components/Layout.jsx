@@ -1,10 +1,14 @@
 import React from "react"
 import { Outlet } from "react-router-dom"
+import Header from "./Header"
+import Footer from "./Footer"
 
 export default function Layout() {
     return (
-        <div classname="flex flex-col justify-center items-center">
+        <div className="grid grid-rows-[auto_1fr_auto] grid-cols-1 w-full h-svh">
+            <Header />
             <Outlet />
+            <Footer />
         </div>
     )
 }
