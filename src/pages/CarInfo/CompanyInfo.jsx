@@ -2,6 +2,8 @@ import React from "react"
 
 export default function CompanyDetail() {
     return (
-        <h1>Company details</h1>
+        <div className="m-auto">
+            <h1>Company details</h1>
+        </div>
     )
 }
