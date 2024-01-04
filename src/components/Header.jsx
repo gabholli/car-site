@@ -3,7 +3,8 @@ import { Link, NavLink } from "react-router-dom"
 
 export default function Header() {
     return (
-        <header className="bg-orange-100 h-20 flex justify-center items-center">
+        <header className="bg-orange-100 h-20 flex justify-center items-center
+            text-xl">
             <div className="flex gap-10">
                 <Link to="/">Car Info Site</Link>
             </div>

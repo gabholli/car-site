@@ -43,7 +43,7 @@ export default function Companies() {
         return (
             <div key={item.Mfr_ID}>
                 <NavLink
-                    className="hover:underline"
+                    className="hover:underline font-medium"
                     to={`${item.Mfr_ID}`}>
                     {item.Mfr_CommonName}
                 </NavLink>
@@ -64,7 +64,7 @@ export default function Companies() {
                 </input>
             </form> */}
             <h1 className="text-2xl text-center">Choose a company:</h1>
-            <nav className="grid md:grid-cols-3 gap-y-1 gap-x-6">
+            <nav className="grid md:grid-cols-3 gap-y-2 gap-x-6">
                 {manufacturerInfo}
             </nav>
         </div>
