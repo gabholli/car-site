@@ -33,7 +33,11 @@ export default function Companies() {
     const manufacturerInfo = uniqueManufacturers.map(item => {
         return (
             <div key={item.Mfr_ID}>
-                <NavLink to={`${item.Mfr_ID}`}>{item.Mfr_CommonName}</NavLink>
+                <NavLink
+                    className="hover:underline"
+                    to={`${item.Mfr_ID}`}>
+                    {item.Mfr_CommonName}
+                </NavLink>
             </div>
         )
     })
@@ -41,7 +45,7 @@ export default function Companies() {
     return (
         <div className="flex flex-col items-center gap-4 p-4" >
             <h1 className="text-2xl text-center">Choose a company:</h1>
-            <nav className="flex flex-col gap-1">
+            <nav className="grid md:grid-cols-3 gap-y-1 gap-x-6">
                 {manufacturerInfo}
             </nav>
         </div>
