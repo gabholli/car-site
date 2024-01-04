@@ -5,7 +5,7 @@ import { NavLink } from "react-router-dom"
 export default function Companies() {
     const [manufacturer, SetManufacturer] = useState([])
     // const [page, setPage] = useState({
-    //     pageNumber: 1
+    //     pageNumber: ""
     // })
 
     // function handleChange(event) {
@@ -55,7 +55,7 @@ export default function Companies() {
         <div className="flex flex-col items-center gap-4 p-4" >
             {/* <form>
                 <input className=""
-                    type="text"
+                    type="number"
                     placeholder="Enter page number"
                     onChange={handleChange}
                     name="pageNumber"
