@@ -1,6 +1,6 @@
 import React from "react"
 import { useEffect, useState } from "react"
-import { NavLink, useParams, Outlet } from "react-router-dom"
+import { NavLink, useParams, Outlet, Link } from "react-router-dom"
 
 export default function CompanyDetail() {
     const { id } = useParams()
@@ -34,9 +34,15 @@ export default function CompanyDetail() {
     console.log(companyData)
 
     return (
-        <div className="flex flex-col items-center p-4">
+        <div className="flex flex-col items-center p-4 gap-8">
+            <Link
+                className="font-extrabold hover:underline"
+                to=".."
+                relative="path"
+            >&larr; Back to company list</Link>
             <nav className="flex gap-8">
                 <NavLink
+                    className="font-medium hover:underline"
                     to="."
                     end
                 >

@@ -52,7 +52,7 @@ export default function Companies() {
     })
 
     return (
-        <div className="flex flex-col items-center gap-4 p-4" >
+        <div className="flex flex-col items-center gap-8 pb-10" >
             {/* <form>
                 <input className=""
                     type="number"
@@ -63,7 +63,7 @@ export default function Companies() {
                 >
                 </input>
             </form> */}
-            <h1 className="text-2xl text-center">Choose a company:</h1>
+            <h1 className="text-2xl text-center font-bold">Choose a company:</h1>
             <nav className="grid md:grid-cols-3 gap-y-2 gap-x-6">
                 {manufacturerInfo}
             </nav>
