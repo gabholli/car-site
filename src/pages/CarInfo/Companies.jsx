@@ -4,9 +4,18 @@ import { NavLink } from "react-router-dom"
 
 export default function Companies() {
     const [manufacturer, SetManufacturer] = useState([])
+    // const [page, setPage] = useState({
+    //     pageNumber: 1
+    // })
+
+    // function handleChange(event) {
+    //     event.preventDefault()
+    //     setPage({ [event.target.name]: event.target.value })
+    //     console.log(page)
+    // }
 
     useEffect(() => {
-        fetch(`https://vpic.nhtsa.dot.gov/api/vehicles/getallmanufacturers?format=json&page=2`)
+        fetch(`https://vpic.nhtsa.dot.gov/api/vehicles/getallmanufacturers?format=json&page=1`)
             .then(response => {
                 if (!response.ok) {
                     throw Error("Data not available")
@@ -44,6 +53,16 @@ export default function Companies() {
 
     return (
         <div className="flex flex-col items-center gap-4 p-4" >
+            {/* <form>
+                <input className=""
+                    type="text"
+                    placeholder="Enter page number"
+                    onChange={handleChange}
+                    name="pageNumber"
+                    value={page.pageNumber}
+                >
+                </input>
+            </form> */}
             <h1 className="text-2xl text-center">Choose a company:</h1>
             <nav className="grid md:grid-cols-3 gap-y-1 gap-x-6">
                 {manufacturerInfo}
