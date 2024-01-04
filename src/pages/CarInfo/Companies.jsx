@@ -32,8 +32,8 @@ export default function Companies() {
 
     const manufacturerInfo = uniqueManufacturers.map(item => {
         return (
-            <div>
-                <NavLink>{item.Mfr_CommonName}</NavLink>
+            <div key={item.Mfr_ID}>
+                <NavLink to={`${item.Mfr_ID}`}>{item.Mfr_CommonName}</NavLink>
             </div>
         )
     })

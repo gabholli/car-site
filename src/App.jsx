@@ -2,6 +2,7 @@ import './index.css'
 import { Route, Routes } from "react-router-dom"
 import Layout from './components/Layout'
 import Companies from './pages/CarInfo/Companies'
+import CompanyDetail from './pages/CarInfo/CompanyDetail'
 import Home from './pages/Home'
 
 function App() {
@@ -14,7 +15,7 @@ function App() {
           <Route index element={<Home />} />
 
           <Route path="companies" element={<Companies />} />
-
+          <Route path="companies/:id" element={<CompanyDetail />} />
         </Route>
       </Routes>
     </div>
