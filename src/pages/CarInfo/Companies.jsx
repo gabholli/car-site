@@ -61,7 +61,7 @@ export default function Companies() {
 
     return (
         <div className="flex flex-col items-center gap-8 px-8 pb-10">
-            <div className="flex justify-center items-center gap-6">
+            <div className="flex justify-center items-center gap-6 mt-10">
                 <form className="flex gap-8" onSubmit={handleSubmit}>
                     <input className="px-1 py-2 text-center"
                         type="number"

@@ -36,7 +36,7 @@ export default function CompanyDetail() {
     return (
         <div className="flex flex-col items-center p-4 gap-8">
             <Link
-                className="font-extrabold hover:underline text-2xl"
+                className="font-extrabold hover:underline text-2xl mt-4"
                 to=".."
                 relative="path"
             >&larr; Back to company list</Link>
