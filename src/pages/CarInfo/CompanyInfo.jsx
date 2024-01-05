@@ -29,7 +29,7 @@ export default function CompanyDetail() {
     return (
         <>
             {
-                companyData.Mfr_ID ?
+                locationName[0] ?
                     (
                         <section className="m-auto">
                             <h1 className="font-bold text-xl mb-8 text-center">{locationName[0]} Locations:</h1>
