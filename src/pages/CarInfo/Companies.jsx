@@ -69,6 +69,7 @@ export default function Companies() {
                         // onChange={handleChange}
                         name="pageNumber"
                         // value={page.pageNumber}
+                        defaultValue="1"
                         min="1"
                         max="3"
                     >
