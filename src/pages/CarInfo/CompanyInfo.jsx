@@ -14,11 +14,11 @@ export default function CompanyDetail() {
         return (
             <div className="flex flex-col w-48" key={item.Mfr_ID}>
                 <h1 className="text-center font-semibold text-lg underline mb-4">Location {index + 1}:</h1>
-                {item.Address && <h2 className="font-bold text-lg mb-1">Address: </h2>}
-                <p className="mb-1">{item.Address}</p>
-                {item.City && <h2 className="font-bold text-lg mb-1">City: </h2>}
-                <p className="mb-1">{item.City}</p>
-                {item.Country && <h2 className="font-bold text-lg mb-1">Country: </h2>}
+                {item.Address && <h2 className="font-bold text-lg">Address: </h2>}
+                <p className="">{item.Address}</p>
+                {item.City && <h2 className="font-bold text-lg">City: </h2>}
+                <p className="">{item.City}</p>
+                {item.Country && <h2 className="font-bold text-lg">Country: </h2>}
                 <p className="mb-4">{item.Country}</p>
             </div>
         )
