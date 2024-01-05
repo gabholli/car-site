@@ -1,8 +1,5 @@
-# React + Vite
+# Car Manufacturer Info Site
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This repository contains files for a website showing information about car manufacturers.
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+To visit, go to: https://gabholli-car-site.netlify.app
