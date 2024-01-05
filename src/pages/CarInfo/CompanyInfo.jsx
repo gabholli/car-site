@@ -29,7 +29,7 @@ export default function CompanyDetail() {
     return (
         <section className="m-auto">
             <h1 className="font-bold text-xl mb-8 text-center">{locationName[0]} locations:</h1>
-            <div className="grid grid-flow-col">
+            <div className="md:grid grid-flow-col">
                 {manufacturerData}
             </div>
         </section>
