@@ -27,11 +27,19 @@ export default function CompanyDetail() {
     const locationName = companyData?.map(item => item.Mfr_CommonName)
 
     return (
-        <section className="m-auto">
-            <h1 className="font-bold text-xl mb-8 text-center">{locationName[0]} Locations:</h1>
-            <div className="md:flex flex-wrap justify-center gap-8">
-                {manufacturerData}
-            </div>
-        </section>
+        <>
+            {
+                companyData.Mfr_ID ?
+                    (
+                        <section className="m-auto">
+                            <h1 className="font-bold text-xl mb-8 text-center">{locationName[0]} Locations:</h1>
+                            <div className="md:flex flex-wrap justify-center gap-8">
+                                {manufacturerData}
+                            </div>
+                        </section>
+                    )
+                    : <h1 className="font-bold text-xl mb-8 text-center">No locations available</h1>
+            }
+        </>
     )
 }
