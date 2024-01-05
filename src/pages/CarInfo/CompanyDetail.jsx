@@ -34,9 +34,9 @@ export default function CompanyDetail() {
     console.log(companyData)
 
     return (
-        <div className="flex flex-col items-center p-4 gap-8">
+        <div className="flex flex-col items-center p-4 gap-4">
             <Link
-                className="font-extrabold hover:underline text-2xl mt-4"
+                className="font-extrabold hover:underline text-2xl mt-4 mb-6"
                 to=".."
                 relative="path"
             >&larr; Back to company list</Link>
