@@ -12,7 +12,7 @@ export default function CompanyDetail() {
 
     const manufacturerData = companyData?.map((item, index) => {
         return (
-            <div className="flex flex-col" key={item.Mfr_ID}>
+            <div className="flex flex-col w-48" key={item.Mfr_ID}>
                 <h1 className="text-center font-semibold text-lg underline mb-4">Location {index + 1}:</h1>
                 {item.Address && <h2 className="font-bold text-lg">Address: </h2>}
                 <p className="font-base">{item.Address}</p>
