@@ -10,24 +10,28 @@ export default function CompanyDetail() {
     //     return word.charAt(0).toUpperCase() + word.substr(1).toLowerCase()
     // }
 
-    const manufacturerData = companyData?.map(item => {
+    const manufacturerData = companyData?.map((item, index) => {
         return (
-            <div className="flex flex-col gap-4" key={item.Mfr_ID}>
-                <h1 className="font-bold">Address: </h1>
-                <p>{item.Address}</p>
-                <h1 className="font-bold">City: </h1>
+            <div className="flex flex-col gap-4 mb-4" key={item.Mfr_ID}>
+                <h1 className="text-center font-semibold text-lg underline">Location {index + 1}:</h1>
+                <h2 className="font-bold text-lg">Address: </h2>
+                <p className="font-base">{item.Address}</p>
+                <h2 className="font-bold text-lg">City: </h2>
                 <p>{item.City}</p>
-                <h1 className="font-bold">Country: </h1>
+                <h2 className="font-bold text-lg">Country: </h2>
                 <p>{item.Country}</p>
             </div>
         )
     })
 
-
+    const locationName = companyData?.map(item => item.Mfr_CommonName)
 
     return (
         <section className="m-auto">
-            {manufacturerData}
+            <h1 className="font-bold text-xl mb-8 text-center">{locationName[0]} locations:</h1>
+            <div className="grid grid-flow-col">
+                {manufacturerData}
+            </div>
         </section>
     )
 }

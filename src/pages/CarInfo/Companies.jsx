@@ -47,7 +47,7 @@ export default function Companies() {
                     <div key={item.Mfr_ID}>
                         <NavLink
                             className="hover:underline font-medium"
-                            to={`${item.Mfr_ID}`}>
+                            to={`${item.Mfr_CommonName}`}>
                             {item.Mfr_CommonName}
                         </NavLink>
                     </div>

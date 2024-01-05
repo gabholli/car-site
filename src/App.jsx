@@ -4,6 +4,7 @@ import Layout from './components/Layout'
 import Companies from './pages/CarInfo/Companies'
 import CompanyDetail from './pages/CarInfo/CompanyDetail'
 import CompanyInfo from './pages/CarInfo/CompanyInfo'
+import Models from './pages/CarInfo/Models'
 import Home from './pages/Home'
 
 function App() {
@@ -16,8 +17,9 @@ function App() {
           <Route index element={<Home />} />
 
           <Route path="companies" element={<Companies />} />
-          <Route path="companies/:id" element={<CompanyDetail />}>
+          <Route path="companies/:name" element={<CompanyDetail />}>
             <Route index element={<CompanyInfo />} />
+            <Route path="models" element={<Models />} />
           </Route>
         </Route>
       </Routes>
