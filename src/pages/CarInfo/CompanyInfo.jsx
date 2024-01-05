@@ -12,14 +12,14 @@ export default function CompanyDetail() {
 
     const manufacturerData = companyData?.map((item, index) => {
         return (
-            <div className="flex flex-col gap-4 mb-4" key={item.Mfr_ID}>
-                <h1 className="text-center font-semibold text-lg underline">Location {index + 1}:</h1>
-                <h2 className="font-bold text-lg">Address: </h2>
+            <div className="flex flex-col" key={item.Mfr_ID}>
+                <h1 className="text-center font-semibold text-lg underline mb-4">Location {index + 1}:</h1>
+                {item.Address && <h2 className="font-bold text-lg">Address: </h2>}
                 <p className="font-base">{item.Address}</p>
-                <h2 className="font-bold text-lg">City: </h2>
+                {item.City && <h2 className="font-bold text-lg">City: </h2>}
                 <p>{item.City}</p>
-                <h2 className="font-bold text-lg">Country: </h2>
-                <p>{item.Country}</p>
+                {item.Country && <h2 className="font-bold text-lg">Country: </h2>}
+                <p className="mb-4">{item.Country}</p>
             </div>
         )
     })
@@ -28,8 +28,8 @@ export default function CompanyDetail() {
 
     return (
         <section className="m-auto">
-            <h1 className="font-bold text-xl mb-8 text-center">{locationName[0]} locations:</h1>
-            <div className="md:grid grid-flow-col">
+            <h1 className="font-bold text-xl mb-8 text-center">{locationName[0]} Locations:</h1>
+            <div className="md:flex flex-wrap justify-center gap-8">
                 {manufacturerData}
             </div>
         </section>

@@ -40,10 +40,17 @@ export default function Models() {
     })
 
     return (
-        <div className="flex flex-col gap-4">
-            <h1 className="text-xl font-bold text-center">Models for {name}:</h1>
-            {companyModels}
-        </div>
+        <>  {
+            models.Model_ID ?
+                (<div className="flex flex-col gap-4">
+                    <h1 className="text-xl font-bold text-center">Models for {name}:</h1>
+                    <div className="md:flex flex-wrap justify-center gap-8">
+                        {companyModels}
+                    </div>
+                </div >)
+                : <h1 className="font-bold text-xl mb-8 text-center">No models available</h1>
+        }
+        </>
     )
 
 }
