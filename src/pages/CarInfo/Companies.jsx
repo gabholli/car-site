@@ -5,6 +5,7 @@ import { NavLink } from "react-router-dom"
 export default function Companies() {
     const [manufacturer, SetManufacturer] = useState([])
     const [page, setPage] = useState("")
+    const [loading, setLoading] = useState(false)
 
     function handleSubmit(event) {
         event.preventDefault()
@@ -18,6 +19,7 @@ export default function Companies() {
     // }
 
     useEffect(() => {
+        setLoading(true)
         fetch(`https://vpic.nhtsa.dot.gov/api/vehicles/getallmanufacturers?format=json&page=${page}`)
             .then(response => {
                 if (!response.ok) {
@@ -28,6 +30,7 @@ export default function Companies() {
             .then(data => {
                 console.log(data.Results)
                 SetManufacturer(data.Results)
+                setLoading(false)
             })
             .catch(error =>
                 console.log("Fetch error: ", error))
@@ -41,6 +44,10 @@ export default function Companies() {
         if (a.Mfr_CommonName?.toLowerCase() > b.Mfr_CommonName?.toLowerCase()) return 1
         return 0
     })
+
+    if (loading) {
+        return <h1 className="font-bold text-xl mb-8 text-center mt-8">Loading...</h1>
+    }
 
     const manufacturerInfo = uniqueManufacturers.map(item => {
         return (

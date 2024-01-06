@@ -5,8 +5,10 @@ import { NavLink, useParams, Outlet, Link } from "react-router-dom"
 export default function CompanyDetail() {
     const { name } = useParams()
     const [companyData, setCompanyData] = useState([])
+    const [loading, setLoading] = useState(false)
 
     useEffect(() => {
+        setLoading(true)
         fetch(`https://vpic.nhtsa.dot.gov/api/vehicles/getmanufacturerdetails/${name}?format=json`)
             .then(response => {
                 if (!response.ok) {
@@ -17,6 +19,7 @@ export default function CompanyDetail() {
             .then(data => {
                 console.log(data)
                 setCompanyData(data.Results)
+                setLoading(false)
             })
             .catch(error =>
                 console.log("Fetch error: ", error))
@@ -31,7 +34,10 @@ export default function CompanyDetail() {
     //         </div>
     //     )
     // })
-    console.log(companyData)
+
+    if (loading) {
+        return <h1 className="font-bold text-xl mb-8 text-center mt-8">Loading...</h1>
+    }
 
     return (
         <div className="flex flex-col items-center p-4 gap-4">

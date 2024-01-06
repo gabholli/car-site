@@ -5,8 +5,10 @@ import { useOutletContext, useParams } from "react-router-dom"
 export default function Models() {
     const [models, setModels] = useState([])
     const { name } = useParams()
+    const [loading, setLoading] = useState(false)
 
     useEffect(() => {
+        setLoading(true)
         fetch(`https://vpic.nhtsa.dot.gov/api/vehicles/getmodelsformake/${name}?format=json`)
             .then(response => {
                 if (!response.ok) {
@@ -17,6 +19,7 @@ export default function Models() {
             .then(data => {
                 console.log(data)
                 setModels(data.Results)
+                setLoading(false)
             })
             .catch(error =>
                 console.log("Fetch error: ", error))
@@ -40,6 +43,10 @@ export default function Models() {
     })
 
     const modelNumber = models?.map(item => item.Model_ID)
+
+    if (loading) {
+        return <h1 className="font-bold text-xl mb-8 text-center mt-8">Loading...</h1>
+    }
 
     return (
         <>  {
