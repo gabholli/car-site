@@ -53,7 +53,7 @@ export default function CompanyDetail() {
             <nav className="flex gap-8">
                 <NavLink
                     className="font-medium hover:underline text-2xl
-                    bg-orange-200 px-4 py-2 rounded "
+                    bg-black px-4 py-2 rounded"
                     to="."
                     end
                 >
@@ -62,7 +62,7 @@ export default function CompanyDetail() {
 
                 <NavLink
                     className="font-medium hover:underline text-2xl
-                    bg-orange-200 px-4 py-2 rounded "
+                    bg-black px-4 py-2 rounded"
                     to="models"
                 >
                     Models

@@ -10,8 +10,8 @@ import Home from './pages/Home'
 function App() {
 
   return (
-    <div className="bg-orange-50 min-h-svh text-black
-      flex flex-col justify-center items-center">
+    <div className="bg-background-image bg-center bg-cover bg no-repeat bg-no-repeat 
+      bg-fixed min-h-svh text-white flex flex-col justify-center items-center">
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
