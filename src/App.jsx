@@ -11,7 +11,7 @@ function App() {
 
   return (
     <div className="bg-background-image bg-center bg-cover bg no-repeat bg-no-repeat 
-      bg-fixed min-h-svh text-white flex flex-col justify-center items-center">
+      bg-fixed min-h-svh font-arial text-white flex flex-col justify-center items-center">
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
