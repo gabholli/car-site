@@ -45,7 +45,11 @@ export default function Models() {
     const modelNumber = models?.map(item => item.Model_ID)
 
     if (loading) {
-        return <h1 className="font-bold text-xl mb-8 text-center mt-8">Loading...</h1>
+        return (
+            <div className="flex justify-center items-center">
+                <h1 className="font-bold text-xl mb-8 text-center mt-8">Loading...</h1>
+            </div>
+        )
     }
 
     return (

@@ -46,7 +46,11 @@ export default function Companies() {
     })
 
     if (loading) {
-        return <h1 className="font-bold text-xl mb-8 text-center mt-8">Loading...</h1>
+        return (
+            <div className="flex justify-center items-center">
+                <h1 className="font-bold text-xl mb-8 text-center mt-8">Loading...</h1>
+            </div>
+        )
     }
 
     const manufacturerInfo = uniqueManufacturers.map(item => {
