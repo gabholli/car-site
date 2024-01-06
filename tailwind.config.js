@@ -7,7 +7,7 @@ export default {
   theme: {
     extend: {
       backgroundImage: {
-        'background-image': "url('./src//assets/dark-highway.jpg')",
+        'background-image': "url('./src/assets/dark-highway.jpg')",
       },
     }
     ,
