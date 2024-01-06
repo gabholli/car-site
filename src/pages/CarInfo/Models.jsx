@@ -50,7 +50,7 @@ export default function Models() {
                         {companyModels}
                     </div>
                 </div >)
-                : <h1 className="font-bold text-xl mb-8 text-center">No models available</h1>
+                : <h1 className="font-bold text-xl mb-8 text-center mt-8">No models available</h1>
         }
         </>
     )

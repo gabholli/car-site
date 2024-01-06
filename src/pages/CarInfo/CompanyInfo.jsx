@@ -38,7 +38,7 @@ export default function CompanyDetail() {
                             </div>
                         </section>
                     )
-                    : <h1 className="font-bold text-xl mb-8 text-center">No locations available</h1>
+                    : <h1 className="font-bold text-xl mb-8 text-center mt-8">No locations available</h1>
             }
         </>
     )
