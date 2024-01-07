@@ -92,7 +92,9 @@ export default function Models() {
         <>  {
             modelNumber[0] ?
                 (<div className="flex flex-col gap-4 justify-center max-w-2xl">
-                    <h1 className="text-xl font-bold text-center my-4">Models for {name}:</h1>
+                    <h1 className="text-xl font-bold text-center my-4">
+                        Models Manufactured by {name}:
+                    </h1>
                     <div className="md:flex flex-wrap justify-center items-center text-center
                     mb-6 px-6 gap-8 max-w-7xl min-h-20">
                         {currentItems}
