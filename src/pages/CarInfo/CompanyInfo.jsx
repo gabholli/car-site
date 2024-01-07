@@ -10,6 +10,10 @@ export default function CompanyDetail() {
     //     return word.charAt(0).toUpperCase() + word.substr(1).toLowerCase()
     // }
 
+    function allNull(address, city, country) {
+        return address === null && city === null && country === null
+    }
+
     const manufacturerData = companyData
         .sort((a, b) => {
             if (a.Country?.toLowerCase() < b.Country?.toLowerCase()) return -1
@@ -18,15 +22,30 @@ export default function CompanyDetail() {
         })
         .map((item, index) => {
             return (
-                <div className="flex flex-col gap-y-2 w-48" key={item.Mfr_ID}>
-                    <h1 className="text-center font-semibold text-lg underline mb-2">Location {index + 1}:</h1>
-                    {item.Address && <h2 className="font-bold text-lg">Address: </h2>}
-                    {item.Address && <p className="">{item.Address}</p>}
-                    {item.City && <h2 className="font-bold text-lg">City: </h2>}
-                    {item.City && <p className="">{item.City}</p>}
-                    {item.Country && <h2 className="font-bold text-lg">Country: </h2>}
-                    {item.Country && <p className="mb-4">{item.Country}</p>}
-                </div>
+                <>
+                    {!allNull(item.Address, item.City, item.Country) ?
+                        (
+                            <div className="flex flex-col gap-y-2 w-48" key={item.Mfr_ID}>
+                                <h1 className="text-center font-semibold text-lg underline mb-2">
+                                    Location {index + 1}:
+                                </h1>
+                                {item.Address && <h2 className="font-bold text-lg">Address: </h2>}
+                                {item.Address && <p className="">{item.Address}</p>}
+                                {item.City && <h2 className="font-bold text-lg">City: </h2>}
+                                {item.City && <p className="">{item.City}</p>}
+                                {item.Country && <h2 className="font-bold text-lg">Country: </h2>}
+                                {item.Country && <p className="mb-4">{item.Country}</p>}
+                            </div>
+                        )
+                        :
+                        <div className="flex flex-col gap-y-2 w-48" key={item.Mfr_ID}>
+                            <h1 className="text-center font-semibold text-lg underline mb-2">
+                                Location {index + 1}:
+                            </h1>
+                            <h1 className="text-center text-lg">No data currently</h1>
+                        </div>
+                    }
+                </>
             )
         })
 
