@@ -96,7 +96,7 @@ export default function Models() {
                         Models Manufactured by {name}:
                     </h1>
                     <div className="md:flex flex-wrap justify-center items-center text-center
-                    mb-6 px-6 gap-8 max-w-7xl min-h-20">
+                    mb-6 px-6 gap-8 max-w-7xl min-h-64">
                         {currentItems}
                     </div>
                     <div>
