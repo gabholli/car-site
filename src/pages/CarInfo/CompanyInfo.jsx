@@ -21,11 +21,11 @@ export default function CompanyDetail() {
                 <div className="flex flex-col gap-y-2 w-48" key={item.Mfr_ID}>
                     <h1 className="text-center font-semibold text-lg underline mb-2">Location {index + 1}:</h1>
                     {item.Address && <h2 className="font-bold text-lg">Address: </h2>}
-                    <p className="">{item.Address}</p>
+                    {item.Address && <p className="">{item.Address}</p>}
                     {item.City && <h2 className="font-bold text-lg">City: </h2>}
-                    <p className="">{item.City}</p>
+                    {item.City && <p className="">{item.City}</p>}
                     {item.Country && <h2 className="font-bold text-lg">Country: </h2>}
-                    <p className="mb-4">{item.Country}</p>
+                    {item.Country && <p className="mb-4">{item.Country}</p>}
                 </div>
             )
         })
