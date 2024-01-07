@@ -49,9 +49,8 @@ export default function CompanyDetail() {
             )
         })
 
-    console.log(companyData)
-
     const locationId = companyData?.map(item => item.Mfr_ID)
+    const companyName = companyData?.map(item => item.Mfr_CommonName)
 
     return (
         <>
@@ -59,7 +58,8 @@ export default function CompanyDetail() {
                 locationId[0] ?
                     (
                         <section className="m-auto">
-                            <h1 className="font-bold text-xl mb-8 mt-5 text-center">Company Locations:</h1>
+                            <h1 className="font-bold text-xl mb-8 mt-5 text-center">
+                                {companyName[0] ? companyName[0] : "Company"} Locations:</h1>
                             <div className="md:flex flex-wrap justify-center gap-8">
                                 {manufacturerData}
                             </div>

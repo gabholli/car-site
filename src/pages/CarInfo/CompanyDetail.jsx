@@ -50,7 +50,7 @@ export default function CompanyDetail() {
                 to=".."
                 relative="path"
             >&larr; Back to company list</Link>
-            <nav className="flex gap-8">
+            <nav className="flex flex-col md:flex-row gap-8 text-center">
                 <NavLink
                     className="font-medium hover:underline text-2xl
                     bg-black px-4 py-2 rounded"
@@ -66,6 +66,14 @@ export default function CompanyDetail() {
                     to="models"
                 >
                     Models
+                </NavLink>
+
+                <NavLink
+                    className="font-medium hover:underline text-2xl
+                    bg-black px-4 py-2 rounded"
+                    to="types"
+                >
+                    Types
                 </NavLink>
             </nav>
             <Outlet context={{ companyData }} />
