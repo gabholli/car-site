@@ -48,7 +48,7 @@ export default function Types() {
         )
     })
 
-    // const modelNumber = models?.map(item => item.Model_ID)
+    const typeNumber = types?.map(item => item.VehicleTypeId)
 
     if (loading) {
         return (
@@ -60,14 +60,17 @@ export default function Types() {
 
     return (
         <>
-            <div className="flex flex-col gap-4">
-                <h1 className="text-xl font-bold text-center my-4">Car Types Manufactured by {name}:</h1>
-                <div className="md:flex flex-wrap justify-center items-center text-center
+            {
+                typeNumber[0] ?
+                    <div className="flex flex-col gap-4">
+                        <h1 className="text-xl font-bold text-center my-4">Car Types Manufactured by {name}:</h1>
+                        <div className="md:flex flex-wrap justify-center items-center text-center
                     mb-6 gap-8 md:w-96">
-                    {companyTypes}
-                </div>
-            </div >
-            {/* : <h1 className="font-bold text-xl mb-8 text-center mt-8">No models available</h1> */}
+                            {companyTypes}
+                        </div>
+                    </div >
+                    : <h1 className="font-bold text-xl mb-8 text-center mt-8">No types available</h1>
+            }
         </>
     )
 
