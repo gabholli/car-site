@@ -6,6 +6,9 @@ export default function Models() {
     const [models, setModels] = useState([])
     const { name } = useParams()
     const [loading, setLoading] = useState(false)
+    const [currentPage, setCurrentPage] = useState(1)
+    const [itemsPerPage, setItemsPerPage] = useState(10)
+    const [activePage, setActivePage] = useState(1)
 
     useEffect(() => {
         setLoading(true)
@@ -42,6 +45,39 @@ export default function Models() {
         )
     })
 
+    const indexOfLastItem = currentPage * itemsPerPage
+    const indexOfFirstItem = indexOfLastItem - itemsPerPage
+    const currentItems = companyModels.slice(indexOfFirstItem, indexOfLastItem)
+    const pageNumbers = []
+
+    function paginate(pageNumber) {
+        return setCurrentPage(pageNumber)
+    }
+
+    for (let i = 1; i <= Math.ceil(companyModels.length / itemsPerPage); i++) {
+        pageNumbers.push(i)
+    }
+
+    function handlePageClick(number) {
+        setActivePage(number)
+        paginate(number)
+    }
+
+    const tenItemList = pageNumbers.map(number => {
+        return (
+            <li key={number}>
+                <a
+                    onClick={() => {
+                        handlePageClick(number)
+                        paginate(number)
+                    }}
+                >
+                    {number}
+                </a>
+            </li>
+        )
+    })
+
     const modelNumber = models?.map(item => item.Model_ID)
 
     if (loading) {
@@ -55,11 +91,21 @@ export default function Models() {
     return (
         <>  {
             modelNumber[0] ?
-                (<div className="flex flex-col gap-4">
+                (<div className="flex flex-col gap-4 justify-center max-w-2xl">
                     <h1 className="text-xl font-bold text-center my-4">Models for {name}:</h1>
                     <div className="md:flex flex-wrap justify-center items-center text-center
-                    mb-6 px-6 gap-8 max-w-7xl">
-                        {companyModels}
+                    mb-6 px-6 gap-8 max-w-7xl md:min-h-20">
+                        {currentItems}
+                    </div>
+                    <div>
+                        <nav>
+                            <h1 className="font-bold text-lg text-center mb-10">Pages:</h1>
+                            <ul className="list-none flex flex-wrap justify-center gap-x-2 cursor-pointer">
+                                {
+                                    tenItemList
+                                }
+                            </ul>
+                        </nav>
                     </div>
                 </div >)
                 : <h1 className="font-bold text-xl mb-8 text-center mt-8">No models available</h1>

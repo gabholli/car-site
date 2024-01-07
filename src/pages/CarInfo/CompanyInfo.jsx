@@ -1,10 +1,15 @@
-import React from "react"
+import React, { useState } from "react"
 import { useOutletContext, useParams } from "react-router-dom"
 
 export default function CompanyDetail() {
 
     const { name } = useParams()
     const { companyData } = useOutletContext()
+
+    const [currentPage, setCurrentPage] = useState(1)
+    const [itemsPerPage, setItemsPerPage] = useState(10)
+    const [activePage, setActivePage] = useState(1)
+
 
     // function titleCase(word) {
     //     return word.charAt(0).toUpperCase() + word.substr(1).toLowerCase()
@@ -49,6 +54,39 @@ export default function CompanyDetail() {
             )
         })
 
+    const indexOfLastItem = currentPage * itemsPerPage
+    const indexOfFirstItem = indexOfLastItem - itemsPerPage
+    const currentItems = manufacturerData.slice(indexOfFirstItem, indexOfLastItem)
+    const pageNumbers = []
+
+    function paginate(pageNumber) {
+        return setCurrentPage(pageNumber)
+    }
+
+    for (let i = 1; i <= Math.ceil(manufacturerData.length / itemsPerPage); i++) {
+        pageNumbers.push(i)
+    }
+
+    function handlePageClick(number) {
+        setActivePage(number)
+        paginate(number)
+    }
+
+    const tenItemList = pageNumbers.map(number => {
+        return (
+            <li key={number}>
+                <a
+                    onClick={() => {
+                        handlePageClick(number)
+                        paginate(number)
+                    }}
+                >
+                    {number}
+                </a>
+            </li>
+        )
+    })
+
     const locationId = companyData?.map(item => item.Mfr_ID)
 
     return (
@@ -56,13 +94,26 @@ export default function CompanyDetail() {
             {
                 locationId[0] ?
                     (
-                        <section className="m-auto">
-                            <h1 className="font-bold text-xl mb-8 mt-5 text-center">
-                                {name} Locations:</h1>
-                            <div className="md:flex flex-wrap justify-center gap-8">
-                                {manufacturerData}
+                        <div>
+                            <section className="m-auto">
+                                <h1 className="font-bold text-xl mb-8 mt-5 text-center">
+                                    {name} Locations:</h1>
+                                <div className="md:flex flex-wrap justify-center gap-8">
+                                    {currentItems}
+                                </div>
+                            </section>
+                            <div>
+                                <nav>
+                                    <h1 className="font-bold text-lg text-center mb-10">Pages:</h1>
+                                    <ul className="list-none flex flex-wrap justify-center gap-x-2 cursor-pointer">
+                                        {
+                                            tenItemList
+                                        }
+                                    </ul>
+                                </nav>
                             </div>
-                        </section>
+                        </div>
+
                     )
                     : <h1 className="font-bold text-xl mb-8 text-center mt-8">No locations available</h1>
             }
