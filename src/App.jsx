@@ -5,7 +5,7 @@ import Companies from './pages/CarInfo/Companies'
 import CompanyDetail from './pages/CarInfo/CompanyDetail'
 import CompanyInfo from './pages/CarInfo/CompanyInfo'
 import Models from './pages/CarInfo/Models'
-import Home from './pages/Home'
+import Home from './pages/Home/Home'
 import NotFound from './pages/NotFound/NotFound'
 
 function App() {
