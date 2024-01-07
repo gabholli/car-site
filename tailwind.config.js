@@ -7,13 +7,12 @@ export default {
   theme: {
     extend: {
       backgroundImage: {
-        'background-image': "url('./assets/dark-highway.jpg')",
+        'background-image': "url('./assets/dark-highway.jpg')"
       },
       fontFamily: {
         'arial': ['Arial', 'Helvetica', 'sans-serif']
       }
-    }
-    ,
+    },
   },
   plugins: [],
 }
