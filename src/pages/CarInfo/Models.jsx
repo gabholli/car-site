@@ -1,6 +1,6 @@
 import React from "react"
 import { useEffect, useState } from "react"
-import { useOutletContext, useParams } from "react-router-dom"
+import { useParams } from "react-router-dom"
 
 export default function Models() {
     const [models, setModels] = useState([])
