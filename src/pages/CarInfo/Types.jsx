@@ -70,7 +70,7 @@ export default function Types() {
                             gap-12 max-w-lg">
                             {companyTypes}
                         </div>
-                    </div >
+                    </div>
                     : <h1 className="font-bold text-xl mb-8 text-center mt-8">No types available</h1>
             }
         </>
