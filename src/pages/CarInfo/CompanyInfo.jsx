@@ -98,14 +98,15 @@ export default function CompanyDetail() {
                             <section className="m-auto">
                                 <h1 className="font-bold text-xl mb-8 mt-5 text-center">
                                     {name} Locations:</h1>
-                                <div className="md:flex flex-wrap justify-center gap-8">
+                                <div className="md:flex flex-wrap justify-center gap-8 min-h-40">
                                     {currentItems}
                                 </div>
                             </section>
                             <div>
                                 <nav>
                                     <h1 className="font-bold text-lg text-center mb-10">Pages:</h1>
-                                    <ul className="list-none flex flex-wrap justify-center gap-x-2 cursor-pointer">
+                                    <ul className="list-none flex flex-wrap justify-center gap-x-8 md:gap-x-6 
+                                    cursor-pointer">
                                         {
                                             tenItemList
                                         }

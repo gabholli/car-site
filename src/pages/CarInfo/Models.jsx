@@ -94,13 +94,14 @@ export default function Models() {
                 (<div className="flex flex-col gap-4 justify-center max-w-2xl">
                     <h1 className="text-xl font-bold text-center my-4">Models for {name}:</h1>
                     <div className="md:flex flex-wrap justify-center items-center text-center
-                    mb-6 px-6 gap-8 max-w-7xl md:min-h-20">
+                    mb-6 px-6 gap-8 max-w-7xl min-h-20">
                         {currentItems}
                     </div>
                     <div>
                         <nav>
                             <h1 className="font-bold text-lg text-center mb-10">Pages:</h1>
-                            <ul className="list-none flex flex-wrap justify-center gap-x-2 cursor-pointer">
+                            <ul className="list-none flex flex-wrap justify-center gap-x-8 md:gap-x-6 
+                            cursor-pointer">
                                 {
                                     tenItemList
                                 }
