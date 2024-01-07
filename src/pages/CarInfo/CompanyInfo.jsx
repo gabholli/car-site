@@ -30,7 +30,7 @@ export default function CompanyDetail() {
                 <>
                     {!allNull(item.Address, item.City, item.Country) ?
                         (
-                            <div className="flex flex-col gap-y-2 w-48" key={item.Mfr_ID}>
+                            <div className="flex flex-col px-2 md:p-0 gap-y-2 md:w-48" key={item.Mfr_ID}>
                                 <h1 className="text-center font-semibold text-lg underline mb-2">
                                     Location {index + 1}:
                                 </h1>
