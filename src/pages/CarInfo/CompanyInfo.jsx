@@ -39,7 +39,7 @@ export default function CompanyDetail() {
                 locationName[0] ?
                     (
                         <section className="m-auto">
-                            <h1 className="font-bold text-xl mb-8 text-center">{locationName[0]} Locations:</h1>
+                            <h1 className="font-bold text-xl mb-8 mt-4 text-center">{locationName[0]} Locations:</h1>
                             <div className="md:flex flex-wrap justify-center gap-8">
                                 {manufacturerData}
                             </div>
