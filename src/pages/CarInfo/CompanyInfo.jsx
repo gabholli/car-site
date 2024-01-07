@@ -1,9 +1,9 @@
 import React from "react"
-import { useEffect } from "react"
-import { useOutletContext } from "react-router-dom"
+import { useOutletContext, useParams } from "react-router-dom"
 
 export default function CompanyDetail() {
 
+    const { name } = useParams()
     const { companyData } = useOutletContext()
 
     // function titleCase(word) {
@@ -50,7 +50,6 @@ export default function CompanyDetail() {
         })
 
     const locationId = companyData?.map(item => item.Mfr_ID)
-    const companyName = companyData?.map(item => item.Mfr_CommonName)
 
     return (
         <>
@@ -59,7 +58,7 @@ export default function CompanyDetail() {
                     (
                         <section className="m-auto">
                             <h1 className="font-bold text-xl mb-8 mt-5 text-center">
-                                {companyName[0] ? companyName[0] : "Company"} Locations:</h1>
+                                {name} Locations:</h1>
                             <div className="md:flex flex-wrap justify-center gap-8">
                                 {manufacturerData}
                             </div>
