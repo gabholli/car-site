@@ -91,7 +91,7 @@ export default function Companies() {
                     </button>
                 </form>
             </div>
-            <h1 className="text-2xl text-center font-bold">Choose a company:</h1>
+            <h1 className="text-2xl text-center font-bold my-2">Choose a company:</h1>
             <nav className="grid md:grid-cols-3 gap-y-2 gap-x-6 justify-items-center">
                 {manufacturerInfo}
             </nav>
