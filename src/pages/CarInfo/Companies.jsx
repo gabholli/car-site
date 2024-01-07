@@ -47,7 +47,7 @@ export default function Companies() {
 
     if (loading) {
         return (
-            <div className="flex justify-center items-center">
+            <div className="flex justify-center items-center min-h-full">
                 <h1 className="font-bold text-xl mb-8 text-center mt-8">Loading...</h1>
             </div>
         )
