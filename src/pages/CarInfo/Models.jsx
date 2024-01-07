@@ -66,8 +66,8 @@ export default function Models() {
     const tenItemList = pageNumbers.map(number => {
         return (
             <li
-                className="hover:underline text-xl bg-gray-700 size-8 flex
-            justify-center items-center"
+                className="hover:underline text-xl bg-orange-200 size-8 flex
+                    justify-center items-center"
                 key={number}
             >
                 <a
@@ -86,9 +86,7 @@ export default function Models() {
 
     if (loading) {
         return (
-            <div className="flex justify-center items-center min-h-full">
-                <h1 className="font-bold text-xl mb-8 text-center mt-8">Loading...</h1>
-            </div>
+            <h1 className="font-bold text-xl mb-8 text-center mt-8">Loading...</h1>
         )
     }
 

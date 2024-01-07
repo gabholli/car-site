@@ -47,7 +47,7 @@ export default function Companies() {
 
     if (loading) {
         return (
-            <div className="flex justify-center items-center min-h-full">
+            <div className="flex justify-center items-center">
                 <h1 className="font-bold text-xl mb-8 text-center mt-8">Loading...</h1>
             </div>
         )
@@ -74,7 +74,7 @@ export default function Companies() {
         <div className="flex flex-col items-center gap-8 px-8 pb-10">
             <div className="flex justify-center items-center gap-6 mt-10">
                 <form className="flex gap-8" onSubmit={handleSubmit}>
-                    <input className="px-1 py-2 text-center bg-gray-700"
+                    <input className="px-1 py-2 text-center bg-orange-200"
                         type="number"
                         // placeholder="Enter page number"
                         // onChange={handleChange}
@@ -86,7 +86,7 @@ export default function Companies() {
                     >
                     </input>
                     <button className="font-medium hover:underline text-2xl
-                    bg-gray-700 px-4 py-2 rounded">
+                    bg-orange-200 px-4 py-2 rounded">
                         Go to page
                     </button>
                 </form>
