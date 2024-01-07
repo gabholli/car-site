@@ -18,8 +18,8 @@ export default function CompanyDetail() {
         })
         .map((item, index) => {
             return (
-                <div className="flex flex-col w-48" key={item.Mfr_ID}>
-                    <h1 className="text-center font-semibold text-lg underline mb-4">Location {index + 1}:</h1>
+                <div className="flex flex-col gap-y-2 w-48" key={item.Mfr_ID}>
+                    <h1 className="text-center font-semibold text-lg underline mb-2">Location {index + 1}:</h1>
                     {item.Address && <h2 className="font-bold text-lg">Address: </h2>}
                     <p className="">{item.Address}</p>
                     {item.City && <h2 className="font-bold text-lg">City: </h2>}
@@ -39,7 +39,7 @@ export default function CompanyDetail() {
                 locationName[0] ?
                     (
                         <section className="m-auto">
-                            <h1 className="font-bold text-xl mb-8 mt-4 text-center">{locationName[0]} Locations:</h1>
+                            <h1 className="font-bold text-xl mb-8 text-center">{locationName[0]} Locations:</h1>
                             <div className="md:flex flex-wrap justify-center gap-8">
                                 {manufacturerData}
                             </div>
