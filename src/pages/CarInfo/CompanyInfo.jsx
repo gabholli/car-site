@@ -42,7 +42,7 @@ export default function CompanyDetail() {
                             <h1 className="text-center font-semibold text-lg underline mb-2">
                                 Location {index + 1}:
                             </h1>
-                            <h1 className="text-center text-lg">No data currently</h1>
+                            <h2 className="text-center text-lg">No data currently</h2>
                         </div>
                     }
                 </>
