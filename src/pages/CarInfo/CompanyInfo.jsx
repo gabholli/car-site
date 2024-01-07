@@ -74,7 +74,7 @@ export default function CompanyDetail() {
 
     const tenItemList = pageNumbers.map(number => {
         return (
-            <li key={number}>
+            <li className="hover:underline text-lg" key={number}>
                 <a
                     onClick={() => {
                         handlePageClick(number)
@@ -104,7 +104,7 @@ export default function CompanyDetail() {
                             </section>
                             <div>
                                 <nav>
-                                    <h1 className="font-bold text-lg text-center mb-10">Pages:</h1>
+                                    <h1 className="font-bold text-xl text-center mb-10">Pages:</h1>
                                     <ul className="list-none flex flex-wrap justify-center gap-x-8 md:gap-x-6 
                                     cursor-pointer">
                                         {
