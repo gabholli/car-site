@@ -62,12 +62,12 @@ export default function Types() {
         <>
             {
                 typeNumber[0] ?
-                    <div className="flex flex-col gap-4">
-                        <h1 className="text-xl font-bold text-center my-4">
+                    <div className="flex flex-col gap-y-12">
+                        <h1 className="text-xl font-bold text-center">
                             Types of Cars Manufactured by {name}:
                         </h1>
                         <div className="md:flex flex-wrap justify-center items-center text-center
-                    mb-6 gap-8 md:w-96">
+                            gap-12 max-w-lg">
                             {companyTypes}
                         </div>
                     </div >

@@ -74,7 +74,11 @@ export default function CompanyDetail() {
 
     const tenItemList = pageNumbers.map(number => {
         return (
-            <li className="hover:underline text-xl" key={number}>
+            <li
+                className="hover:underline text-xl bg-gray-700 size-8 flex
+                    justify-center items-center"
+                key={number}
+            >
                 <a
                     onClick={() => {
                         handlePageClick(number)
@@ -94,19 +98,19 @@ export default function CompanyDetail() {
             {
                 locationId[0] ?
                     (
-                        <div>
-                            <section className="m-auto">
-                                <h1 className="font-bold text-xl mb-8 mt-5 text-center">
+                        <div className="flex flex-col gap-y-12">
+                            <section className="flex flex-col gap-y-12">
+                                <h1 className="font-bold text-xl text-center">
                                     {name} Locations:</h1>
-                                <div className="md:flex flex-wrap justify-center gap-8 min-h-full">
+                                <div className="md:flex flex-wrap justify-center">
                                     {currentItems}
                                 </div>
                             </section>
                             <div>
-                                <nav>
-                                    <h1 className="font-bold text-xl text-center mb-10">Pages:</h1>
+                                <nav className="flex flex-col gap-y-12">
+                                    <h1 className="font-bold text-xl text-center">Pages:</h1>
                                     <ul className="list-none flex flex-wrap justify-center gap-x-8 md:gap-x-6 
-                                    cursor-pointer">
+                                    gap-y-4 cursor-pointer">
                                         {
                                             tenItemList
                                         }

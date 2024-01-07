@@ -65,7 +65,11 @@ export default function Models() {
 
     const tenItemList = pageNumbers.map(number => {
         return (
-            <li className="hover:underline text-xl" key={number}>
+            <li
+                className="hover:underline text-xl bg-gray-700 size-8 flex
+            justify-center items-center"
+                key={number}
+            >
                 <a
                     onClick={() => {
                         handlePageClick(number)
@@ -91,26 +95,28 @@ export default function Models() {
     return (
         <>  {
             modelNumber[0] ?
-                (<div className="flex flex-col gap-4 justify-center max-w-2xl">
-                    <h1 className="text-xl font-bold text-center my-4">
-                        Models Manufactured by {name}:
-                    </h1>
-                    <div className="md:flex flex-wrap justify-center items-center text-center
-                    mb-6 px-6 gap-8 max-w-7xl min-h-64">
-                        {currentItems}
-                    </div>
-                    <div>
-                        <nav>
-                            <h1 className="font-bold text-xl text-center mb-10">Pages:</h1>
-                            <ul className="list-none flex flex-wrap justify-center gap-x-8 md:gap-x-6 
-                            cursor-pointer">
-                                {
-                                    tenItemList
-                                }
-                            </ul>
-                        </nav>
-                    </div>
-                </div >)
+                (
+                    <div className="flex flex-col gap-y-12 justify-center max-w-2xl">
+                        <h1 className="text-xl font-bold text-center">
+                            Models Manufactured by {name}:
+                        </h1>
+                        <div className="md:flex flex-wrap justify-center items-center text-center
+                        gap-x-12 px-6 max-w-7xl min-h-64">
+                            {currentItems}
+                        </div>
+                        <div>
+                            <nav className="flex flex-col gap-y-12">
+                                <h1 className="font-bold text-xl text-center">Pages:</h1>
+                                <ul className="list-none flex flex-wrap justify-center gap-x-8 md:gap-x-6 
+                            gap-y-12 cursor-pointer">
+                                    {
+                                        tenItemList
+                                    }
+                                </ul>
+                            </nav>
+                        </div>
+                    </div >
+                )
                 : <h1 className="font-bold text-xl mb-8 text-center mt-8">No models available</h1>
         }
         </>

@@ -44,16 +44,16 @@ export default function CompanyDetail() {
     }
 
     return (
-        <div className="flex flex-col items-center p-4 gap-4">
+        <div className="flex flex-col items-center my-8 p-4 gap-y-12">
             <Link
-                className="font-extrabold hover:underline text-2xl my-6 text-center"
+                className="font-extrabold hover:underline text-2xl text-center"
                 to=".."
                 relative="path"
             >&larr; Back to company list</Link>
             <nav className="flex flex-col md:flex-row gap-8 text-center">
                 <NavLink
                     className="font-medium hover:underline text-2xl
-                    bg-black px-4 py-2 rounded"
+                    bg-gray-700 px-4 py-2 rounded"
                     to="."
                     end
                 >
@@ -62,7 +62,7 @@ export default function CompanyDetail() {
 
                 <NavLink
                     className="font-medium hover:underline text-2xl
-                    bg-black px-4 py-2 rounded"
+                    bg-gray-700 px-4 py-2 rounded"
                     to="models"
                 >
                     Models
@@ -70,7 +70,7 @@ export default function CompanyDetail() {
 
                 <NavLink
                     className="font-medium hover:underline text-2xl
-                    bg-black px-4 py-2 rounded"
+                    bg-gray-700 px-4 py-2 rounded"
                     to="types"
                 >
                     Types
