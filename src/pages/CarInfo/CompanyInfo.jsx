@@ -102,7 +102,7 @@ export default function CompanyDetail() {
                             <section className="flex flex-col gap-y-12">
                                 <h1 className="font-bold text-xl text-center">
                                     {name} Locations:</h1>
-                                <div className="md:flex flex-wrap justify-center">
+                                <div className="md:flex flex-wrap justify-center gap-x-6">
                                     {currentItems}
                                 </div>
                             </section>
