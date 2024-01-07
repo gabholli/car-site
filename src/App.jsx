@@ -6,6 +6,7 @@ import CompanyDetail from './pages/CarInfo/CompanyDetail'
 import CompanyInfo from './pages/CarInfo/CompanyInfo'
 import Models from './pages/CarInfo/Models'
 import Home from './pages/Home'
+import NotFound from './pages/NotFound/NotFound'
 
 function App() {
 
@@ -21,6 +22,7 @@ function App() {
             <Route index element={<CompanyInfo />} />
             <Route path="models" element={<Models />} />
           </Route>
+          <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
     </div>
