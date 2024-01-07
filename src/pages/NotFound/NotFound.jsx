@@ -9,7 +9,7 @@ export default function NotFound() {
                 Sorry, the page you were looking for was not found
             </h1>
             <Link to="/" className="bg-black px-4 py-2 rounded text-xl hover:underline">
-                Return to Home
+                Return to home
             </Link>
         </div>
     )
