@@ -74,7 +74,7 @@ export default function CompanyDetail() {
 
     const tenItemList = pageNumbers.map(number => {
         return (
-            <li className="hover:underline text-lg" key={number}>
+            <li className="hover:underline text-xl" key={number}>
                 <a
                     onClick={() => {
                         handlePageClick(number)
