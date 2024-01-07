@@ -58,7 +58,7 @@ export default function Companies() {
             <>
                 {
                     item.Mfr_CommonName &&
-                    <div key={item.Mfr_ID}>
+                    <div key={item.Mfr_ID} className="text-center">
                         <NavLink
                             className="hover:underline font-medium"
                             to={`${item.Mfr_CommonName}`}>
@@ -92,7 +92,7 @@ export default function Companies() {
                 </form>
             </div>
             <h1 className="text-2xl text-center font-bold my-2">Choose a company:</h1>
-            <nav className="grid md:grid-cols-3 gap-y-2 gap-x-6 justify-items-center">
+            <nav className="grid md:grid-cols-3 gap-y-6 md:gap-y-2 gap-x-6 justify-items-center">
                 {manufacturerInfo}
             </nav>
         </div>
