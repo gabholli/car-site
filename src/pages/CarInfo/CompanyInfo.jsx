@@ -33,7 +33,7 @@ export default function CompanyDetail() {
                             <div
                                 className=""
                                 key={item.Mfr_ID}>
-                                <h1 className="text-center font-semibold text-lg underline mb-2">
+                                <h1 className="text-center font-semibold text-lg underline mb-6">
                                     Location {index + 1}:
                                 </h1>
                                 <div className="flex flex-col max-[767px]:text-center px-2 md:p-0 gap-y-2 md:w-48 min-h-80">
