@@ -31,17 +31,24 @@ export default function CompanyDetail() {
                     {!allNull(item.Address, item.City, item.Country) ?
                         (
                             <div
-                                className="flex flex-col max-[767px]:text-center px-2 md:p-0 gap-y-2 md:w-48 h-80"
+                                className=""
                                 key={item.Mfr_ID}>
                                 <h1 className="text-center font-semibold text-lg underline mb-2">
                                     Location {index + 1}:
                                 </h1>
-                                {item.Address && <h2 className="font-bold text-lg">Address: </h2>}
-                                {item.Address && <p className="">{item.Address}</p>}
-                                {item.City && <h2 className="font-bold text-lg">City: </h2>}
-                                {item.City && <p className="">{item.City}</p>}
-                                {item.Country && <h2 className="font-bold text-lg">Country: </h2>}
-                                {item.Country && <p className="mb-4">{item.Country}</p>}
+                                <div className="flex flex-col max-[767px]:text-center px-2 md:p-0 gap-y-2 md:w-48 min-h-80">
+                                    {item.Address && <h2 className="font-bold text-lg">Address: </h2>}
+                                    {item.Address && <p className="">{item.Address}</p>}
+                                    {item.City && <h2 className="font-bold text-lg">City: </h2>}
+                                    {item.City && <p className="">{item.City}</p>}
+                                    {item.StateProvince && <h2 className="font-bold text-lg">State/Province: </h2>}
+                                    {item.StateProvince && <p className="">{item.StateProvince}</p>}
+                                    {item.PostalCode && <h2 className="font-bold text-lg">Postal Code: </h2>}
+                                    {item.PostalCode && <p className="">{item.PostalCode}</p>}
+                                    {item.Country && <h2 className="font-bold text-lg">Country: </h2>}
+                                    {item.Country && <p className="mb-12">{item.Country}</p>}
+
+                                </div>
                             </div>
                         )
                         :
