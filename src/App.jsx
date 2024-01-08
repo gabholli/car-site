@@ -12,8 +12,8 @@ import NotFound from './pages/NotFound/NotFound'
 function App() {
 
   return (
-    <div className="bg-background-image bg-center bg-cover bg no-repeat 
-      bg-fixed min-h-svh text-white font-arial flex flex-col justify-center items-center">
+    <div className="bg-orange-50 bg-center bg-cover bg no-repeat 
+      bg-fixed min-h-svh font-arial flex flex-col justify-center items-center">
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />

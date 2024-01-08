@@ -75,7 +75,7 @@ export default function CompanyDetail() {
     const tenItemList = pageNumbers.map(number => {
         return (
             <li
-                className="hover:underline text-xl bg-black size-8 flex
+                className="hover:underline text-xl bg-orange-200 size-8 flex
                     justify-center items-center"
                 key={number}
             >
