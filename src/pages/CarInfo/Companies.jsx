@@ -60,7 +60,7 @@ export default function Companies() {
                     item.Mfr_CommonName &&
                     <div key={item.Mfr_ID} className="text-center">
                         <NavLink
-                            className="hover:underline font-medium"
+                            className="hover:underline text-lg"
                             to={`${item.Mfr_CommonName}`}>
                             {item.Mfr_CommonName}
                         </NavLink>
