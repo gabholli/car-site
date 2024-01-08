@@ -6,7 +6,7 @@ export default function Header() {
         <header className="bg-orange-100 h-20 flex justify-center items-center
             text-xl">
             <div className="flex gap-10 hover:underline">
-                <Link to="/">Car Info Site</Link>
+                <Link to="/">Vehicle Info Site</Link>
             </div>
         </header>
     )
