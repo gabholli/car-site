@@ -53,7 +53,7 @@ export default function CompanyDetail() {
                         )
                         :
                         <div className="flex flex-col gap-y-2 w-48" key={item.Mfr_ID}>
-                            <h1 className="text-center font-semibold text-lg underline mb-2">
+                            <h1 className="text-center font-semibold text-lg underline mb-4">
                                 Location {index + 1}:
                             </h1>
                             <h2 className="text-center text-lg">No data currently</h2>
