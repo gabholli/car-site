@@ -12,7 +12,7 @@ import NotFound from './pages/NotFound/NotFound'
 function App() {
 
   return (
-    <div className="bg-background-image bg-center bg-cover bg no-repeat 
+    <div className="bg-gray-700 md:bg-background-image bg-center bg-cover bg no-repeat 
       bg-fixed min-h-svh text-white font-arial flex flex-col justify-center items-center">
       <Routes>
         <Route path="/" element={<Layout />}>
