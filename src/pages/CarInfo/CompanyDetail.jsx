@@ -6,6 +6,7 @@ export default function CompanyDetail() {
     const { name } = useParams()
     const [companyData, setCompanyData] = useState([])
     const [loading, setLoading] = useState(false)
+    const [error, setError] = useState(null)
 
     useEffect(() => {
         setLoading(true)
@@ -19,10 +20,14 @@ export default function CompanyDetail() {
             .then(data => {
                 console.log(data)
                 setCompanyData(data.Results)
+            })
+            .catch(error => {
+                console.log("Fetch error: ", error)
+                setError(error)
+            })
+            .finally(() => {
                 setLoading(false)
             })
-            .catch(error =>
-                console.log("Fetch error: ", error))
     }, [name])
 
     // const manufacturerData = companyData?.map(item => {
@@ -39,6 +44,17 @@ export default function CompanyDetail() {
         return (
             <div className="flex justify-center items-center">
                 <h1 className="font-bold text-xl mb-8 text-center mt-8">Loading...</h1>
+            </div>
+        )
+    }
+    console.log(error)
+    if (error) {
+        return (
+            <div className="flex flex-col justify-center items-center">
+                <h1 className="font-bold text-3xl mb-8 text-center mt-8">There was an error loading this page</h1>
+                <Link to="/" className="bg-black px-4 py-2 rounded text-xl hover:underline">
+                    Return to home
+                </Link>
             </div>
         )
     }

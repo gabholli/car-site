@@ -22,10 +22,13 @@ export default function Models() {
             .then(data => {
                 console.log(data)
                 setModels(data.Results)
+            })
+            .catch(error => {
+                console.log("Fetch error: ", error)
+            })
+            .finally(() => {
                 setLoading(false)
             })
-            .catch(error =>
-                console.log("Fetch error: ", error))
     }, [name])
 
     const uniqueModels = [...new Map(models?.map(item =>

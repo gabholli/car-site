@@ -1,11 +1,12 @@
 import React from "react"
 import { useEffect, useState } from "react"
-import { NavLink } from "react-router-dom"
+import { NavLink, Link } from "react-router-dom"
 
 export default function Companies() {
     const [manufacturer, SetManufacturer] = useState([])
     const [page, setPage] = useState("")
     const [loading, setLoading] = useState(false)
+    const [error, setError] = useState(null)
 
     function handleSubmit(event) {
         event.preventDefault()
@@ -30,10 +31,14 @@ export default function Companies() {
             .then(data => {
                 console.log(data.Results)
                 SetManufacturer(data.Results)
+            })
+            .catch(error => {
+                console.log("Fetch error: ", error)
+                setError(error)
+            })
+            .finally(() => {
                 setLoading(false)
             })
-            .catch(error =>
-                console.log("Fetch error: ", error))
     }, [page])
 
     const uniqueManufacturers = [...new Map(manufacturer?.map(item =>
@@ -49,6 +54,17 @@ export default function Companies() {
         return (
             <div className="flex justify-center items-center">
                 <h1 className="font-bold text-xl mb-8 text-center mt-8">Loading...</h1>
+            </div>
+        )
+    }
+
+    if (error) {
+        return (
+            <div className="flex flex-col justify-center items-center">
+                <h1 className="font-bold text-3xl mb-8 text-center mt-8">There was an error loading this page...</h1>
+                <Link to="/" className="bg-black px-4 py-2 rounded text-xl hover:underline">
+                    Return to home
+                </Link>
             </div>
         )
     }
