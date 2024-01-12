@@ -6,6 +6,7 @@ export default function Models() {
     const [models, setModels] = useState([])
     const { name } = useParams()
     const [loading, setLoading] = useState(false)
+    const [error, setError] = useState(null)
     const [currentPage, setCurrentPage] = useState(1)
     const [itemsPerPage, setItemsPerPage] = useState(10)
     const [activePage, setActivePage] = useState(1)
@@ -25,6 +26,7 @@ export default function Models() {
             })
             .catch(error => {
                 console.log("Fetch error: ", error)
+                setError(error)
             })
             .finally(() => {
                 setLoading(false)
@@ -90,6 +92,17 @@ export default function Models() {
     if (loading) {
         return (
             <h1 className="font-bold text-xl mb-8 text-center mt-8">Loading...</h1>
+        )
+    }
+
+    if (error) {
+        return (
+            <div className="flex flex-col justify-center items-center">
+                <h1 className=" text-3xl mb-8 text-center mt-8">There was an error loading this page</h1>
+                <Link to="/" className="bg-black px-4 py-2 rounded text-xl hover:underline">
+                    Return to home
+                </Link>
+            </div>
         )
     }
 
