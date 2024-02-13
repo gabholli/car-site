@@ -11,6 +11,9 @@ export default {
       },
       fontFamily: {
         'arial': ['Arial', 'Helvetica', 'sans-serif']
+      },
+      minHeight: {
+        screen: ["100vh", "100svh"]
       }
     },
   },
